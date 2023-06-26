@@ -7,7 +7,7 @@ const CardData = ({ match }) => {
 
   useEffect(() => {
     fetchCard();
-  }, []);
+  });
 
   const fetchCard = async () => {
     try {
