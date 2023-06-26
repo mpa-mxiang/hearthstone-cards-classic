@@ -1,10 +1,10 @@
 import React from 'react';
-import MetricData from '../components/MetricData';
+import CardData from '../components/CardData';
 
 const Data = ({ match }) => {
   return (
     <div>
-      <MetricDetails match={match} />
+      <CardData match={match} />
     </div>
   );
 };

@@ -1,9 +1,17 @@
-function App() {
-  return (
-    <div className="App">
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Data from './pages/Data';
 
-    </div>
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/detail" component={Data} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

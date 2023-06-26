@@ -1,10 +1,10 @@
 import React from 'react';
-import MetricList from '../components/MetricList';
+import CardList from '../components/CardList';
 
 const Home = () => {
   return (
     <div>
-      <MetricList />
+      <CardList />
     </div>
   );
 };
