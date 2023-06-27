@@ -9,6 +9,7 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
       },
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching cards:', error);
@@ -31,7 +32,13 @@ const cardsSlice = createSlice({
       })
       .addCase(fetchCards.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.cards = action.payload;
+        const nice = action.payload;
+        const temp = nice.map((card)=>({
+            id: card.dbfId,
+            cardName: card.name,
+        }));
+        console.log(temp);
+        //state.cards = action.payload;
       })
       .addCase(fetchCards.rejected, (state, action) => {
         state.status = 'failed';

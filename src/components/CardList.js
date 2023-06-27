@@ -4,6 +4,8 @@ import { fetchCards } from '../redux/cardSlice';
 
 const CardList = () => {
   const cards = useSelector((state) => state.cards.cards);
+  console.log(cards);
+  
   const status = useSelector((state) => state.cards.status);
   const error = useSelector((state) => state.cards.error);
   const dispatch = useDispatch();
@@ -31,16 +33,9 @@ const CardList = () => {
   return (
     <div>
       <h1>Hearthstone Cards</h1>
-      <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <ul>
-        {filteredCards.map((card) => (
-          <li key={card.cardId}>{card.name}</li>
-        ))}
-      </ul>
     </div>
   );
 };
-
 const Filter = ({ searchTerm, setSearchTerm }) => {
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
@@ -52,8 +47,6 @@ const Filter = ({ searchTerm, setSearchTerm }) => {
       <input
         type="text"
         id="search"
-        value={searchTerm}
-        onChange={handleSearchTermChange}
       />
     </div>
   );

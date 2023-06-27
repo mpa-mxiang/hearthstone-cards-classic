@@ -23,7 +23,7 @@ const App = () => {
       <h1>Hearthstone</h1>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/calculator" element={<Data />} />
+        <Route path="/data" element={<Data />} />
       </Routes>
     </div>
   </Router>

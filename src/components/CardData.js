@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCards } from './cardsSlice';
+import { fetchCards } from '../redux/cardSlice';
 
 const CardData = ({ match }) => {
   const { cardId } = match.params;
