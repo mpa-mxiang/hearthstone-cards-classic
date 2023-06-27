@@ -20,7 +20,7 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
 const cardsSlice = createSlice({
   name: 'cards',
   initialState: {
-    cards: [],
+    cards: null,
     status: 'idle',
     error: null,
   },
@@ -32,13 +32,7 @@ const cardsSlice = createSlice({
       })
       .addCase(fetchCards.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        const nice = action.payload;
-        const temp = nice.map((card)=>({
-            id: card.dbfId,
-            cardName: card.name,
-        }));
-        console.log(temp);
-        //state.cards = action.payload;
+        state.cards = action.payload;
       })
       .addCase(fetchCards.rejected, (state, action) => {
         state.status = 'failed';
