@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCards } from './cardsSlice';
 
 const CardData = ({ match }) => {
-  const [card, setCard] = useState(null);
   const { cardId } = match.params;
+  const cards = useSelector((state) => state.cards.cards);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCard();
-  });
+    dispatch(fetchCards());
+  }, [dispatch]);
 
-  const fetchCard = async () => {
-    try {
-      const response = await axios.get(
-        `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/${cardId}`,
-        {
-          headers: {
-            'x-rapidapi-key': 'YOUR_API_KEY',
-            'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
-          }
-        }
-      );
-      setCard(response.data[0]);
-    } catch (error) {
-      console.error('Error fetching card:', error);
-    }
-  };
+  const card = cards.find((card) => card.cardId === cardId);
 
   if (!card) {
     return <div>Loading...</div>;

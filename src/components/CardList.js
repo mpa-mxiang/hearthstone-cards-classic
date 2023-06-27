@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCards } from '../redux/cardSlice';
 
 const CardList = () => {
-  const [cards, setCards] = useState([]);
+  const cards = useSelector((state) => state.cards.cards);
+  const status = useSelector((state) => state.cards.status);
+  const error = useSelector((state) => state.cards.error);
+  const dispatch = useDispatch();
+
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetchCards();
-  }, []);
-
-  const fetchCards = async () => {
-    try {
-      const response = await axios.get(
-        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards',
-        {
-          headers: {
-            'x-rapidapi-key': 'a813b599aamsh4de48209de349c1p163491jsnfbdd9231636d',
-            'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
-          }
-        }
-      );
-      setCards(response.data);
-    } catch (error) {
-      console.error('Error fetching cards:', error);
+    if (status === 'idle') {
+      dispatch(fetchCards());
     }
-  };
+  }, [status, dispatch]);
 
-  const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   const filteredCards = cards.filter((card) =>
     card.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -37,6 +31,23 @@ const CardList = () => {
   return (
     <div>
       <h1>Hearthstone Cards</h1>
+      <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <ul>
+        {filteredCards.map((card) => (
+          <li key={card.cardId}>{card.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const Filter = ({ searchTerm, setSearchTerm }) => {
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  return (
+    <div>
       <label htmlFor="search">Search:</label>
       <input
         type="text"
@@ -44,12 +55,6 @@ const CardList = () => {
         value={searchTerm}
         onChange={handleSearchTermChange}
       />
-
-      <ul>
-        {filteredCards.map((card) => (
-          <li key={card.cardId}>{card.name}</li>
-        ))}
-      </ul>
     </div>
   );
 };
