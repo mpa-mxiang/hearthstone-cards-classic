@@ -3,26 +3,31 @@ import axios from 'axios';
 
 export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
   try {
-    const response = await axios.get('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Basic', {
+    const response = await axios.get('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Classic', {
       headers: {
         'x-rapidapi-key': 'a813b599aamsh4de48209de349c1p163491jsnfbdd9231636d',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
       },
     });
-    const filteredCards = [];
-    const cardsMap = new Map();
+    // Filter out items without the "image" key
+    const filteredCards = response.data.filter((card) => card.hasOwnProperty('img'));
 
-    response.data.forEach((card) => {
-      if (!cardsMap.has(card.name) || Object.keys(card).length > Object.keys(cardsMap.get(card.name)).length) {
-        cardsMap.set(card.name, card);
+    // Remove duplicates based on name and keep the one with the most keys
+    const uniqueCards = [];
+    const cardNames = new Set();
+    for (const card of filteredCards) {
+      if (!cardNames.has(card.name)) {
+        cardNames.add(card.name);
+        uniqueCards.push(card);
+      } else {
+        const existingCardIndex = uniqueCards.findIndex((c) => c.name === card.name);
+        if (Object.keys(card).length > Object.keys(uniqueCards[existingCardIndex]).length) {
+          uniqueCards[existingCardIndex] = card;
+        }
       }
-    });
-
-    for (const card of cardsMap.values()) {
-      filteredCards.push(card);
     }
 
-    return filteredCards;
+    return uniqueCards;
 
   } catch (error) {
     console.error('Error fetching cards:', error);

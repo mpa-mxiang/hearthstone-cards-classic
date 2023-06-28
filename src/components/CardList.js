@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCards } from '../redux/cardSlice';
+import CardData from './CardData';
 
 const CardList = () => {
   const cards = useSelector((state) => state.cards.cards);
@@ -36,11 +37,14 @@ const CardList = () => {
     <div>
       <h1>Hearthstone Cards</h1>
       <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <ul>
+      <div>
         {filteredCards.map((card) => (
-          <li key={card.cardId}>{card.name}</li>
+          <div key={card.cardId}>
+            <img src={card.img}></img>
+            <span onClick={CardData}>{card.name}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
