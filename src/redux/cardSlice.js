@@ -9,8 +9,21 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
       },
     });
-    console.log(response.data);
-    return response.data;
+    const filteredCards = [];
+    const cardsMap = new Map();
+
+    response.data.forEach((card) => {
+      if (!cardsMap.has(card.name) || Object.keys(card).length > Object.keys(cardsMap.get(card.name)).length) {
+        cardsMap.set(card.name, card);
+      }
+    });
+
+    for (const card of cardsMap.values()) {
+      filteredCards.push(card);
+    }
+
+    return filteredCards;
+
   } catch (error) {
     console.error('Error fetching cards:', error);
     throw error;
