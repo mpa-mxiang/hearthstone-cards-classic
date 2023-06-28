@@ -4,7 +4,7 @@ import { fetchCards } from '../redux/cardSlice';
 
 const CardData = ({ match }) => {
   const { cardId } = match.params;
-  const cards = useSelector((state) => state.cards.cards);
+  const cards = useSelector((state) => state.cards.cards.Basic);
   const dispatch = useDispatch();
 
   useEffect(() => {
