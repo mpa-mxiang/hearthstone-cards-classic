@@ -42,7 +42,7 @@ const CardList = () => {
         {filteredCards.map((card) => (
 
           <Link to={`/data/${card.cardId}`} key={card.cardId}>
-            <img src={card.img} onClick={Data} alt="cardImg"></img>
+            <img src={card.img} onClick={Data} alt="cardImg" />
           </Link>
         ))}
       </div>

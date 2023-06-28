@@ -21,6 +21,7 @@ const CardData = () => {
   return (
     <div>
       <h1>Card Details</h1>
+      <img src={card.img} alt="cardImg"/>
       <h2>Name: {card.name}</h2>
       <p>Type: {card.type}</p>
       <p>Player Class: {card.playerClass}</p>
