@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCards } from '../redux/cardSlice';
-import CardData from './CardData';
+import Data from '../pages/Data';
+import { Link } from 'react-router-dom';
 
 const CardList = () => {
   const cards = useSelector((state) => state.cards.cards);
-  console.log(cards);
   const status = useSelector((state) => state.cards.status);
   const error = useSelector((state) => state.cards.error);
   const dispatch = useDispatch();
@@ -38,11 +38,12 @@ const CardList = () => {
       <h1>Hearthstone Cards</h1>
       <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div>
+
         {filteredCards.map((card) => (
-          <div key={card.cardId}>
-            <img src={card.img}></img>
-            <span onClick={CardData}>{card.name}</span>
-          </div>
+
+          <Link to={`/data/${card.cardId}`} key={card.cardId}>
+            <img src={card.img} onClick={Data} alt="cardImg"></img>
+          </Link>
         ))}
       </div>
     </div>

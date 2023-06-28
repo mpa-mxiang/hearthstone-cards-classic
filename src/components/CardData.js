@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCards } from '../redux/cardSlice';
+import { useParams } from 'react-router-dom';
 
-const CardData = ({ match }) => {
-  const { cardId } = match.params;
+const CardData = () => {
+  const { cardId } = useParams();
   const cards = useSelector((state) => state.cards.cards);
   const dispatch = useDispatch();
 
