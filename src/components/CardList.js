@@ -4,6 +4,7 @@ import { fetchCards } from '../redux/cardSlice';
 
 const CardList = () => {
   const cards = useSelector((state) => state.cards.cards);
+  console.log(cards);
   const status = useSelector((state) => state.cards.status);
   const error = useSelector((state) => state.cards.error);
   const dispatch = useDispatch();

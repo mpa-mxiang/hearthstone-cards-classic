@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
   try {
-    const response = await axios.get('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', {
+    const response = await axios.get('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Basic', {
       headers: {
         'x-rapidapi-key': 'a813b599aamsh4de48209de349c1p163491jsnfbdd9231636d',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
