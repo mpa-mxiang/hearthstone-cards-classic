@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+<a name="Hearthstone Classic Cards"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📗 Table of Contents
 
-## Available Scripts
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [Future Features](#future-features)
+  - [🚀 Live Demo](#live-demo)
+  - [🚀 Video Presentation](#video-presentation)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-In the project directory, you can run:
 
-### `npm start`
+# 📖 **Capstone project 1** <a name="about-project"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A project to search classic Hearthstone cards built with React and Redux styled with Tailwind and checked with linters.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🛠 Built With <a name="built-with">VS Code</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm run build`
+GitHub/Git, VS Code, Linters, React&Redux, Tailwind
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Key Features <a name="key-features"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Home page
+- Data page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Future Features <a name="future-features"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- More detailed filters
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Live Demo <a name="live-demo"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [https://mpa-mxiang.github.io/capstone1/](https://features--fantastic-marshmallow-978752.netlify.app/)
 
-### Code Splitting
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Video Presentation <a name="video-presentation"></a>
 
-### Analyzing the Bundle Size
+- [https://www.loom.com/share/503467aedc8b46a1afa4e16e7ebc4c9c](https://www.loom.com/share/b87ee92beabb4ea7a7496da537342403?sid=a9b45208-b88b-4eb9-b191-f9b43571934b)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 💻 Getting Started <a name="getting-started"></a>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To get a local copy up and running, follow these steps below.
+
+### Prerequisites
+
+In order to run this project you need:
+
+Clone the repository using git, and open it with VS code.
+
+So make sure you have VS code installed beforehead, you call install VS code through https://code.visualstudio.com/download.
+
+### Setup
+
+Clone this repository to your desired folder in your laptop:
+
+  cd "your-folder-name"
+  git clone git@github.com:https://github.com/mpa-mxiang/hearthstone-cards-classic.git
+
+
+### Usage
+
+To open the project, you can:
+- Use your prefered explorer and open the index.html file. 
+- You can right click the index.html file to open in the live server with the localhost.
+- Check live demo: <a href="#live-demo">live demo</a>
+
+
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can deploy this project using VS Code terminal with using related command.
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## 👥 Author <a name="author"></a>
+
+
+👤 ** Jiachun Xiang **
+
+- GitHub: https://github.com/mpa-mxiang
+- LinkedIn: https://www.linkedin.com/in/jiachun-lily-xiang-1b197213a/
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome! 
+
+If you like to contribute, report issues, or request feature(s), please contact me through one of the above media link:)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project please star this project to support, thank you for your support!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Nelson Sakwa, the author of the original design, who provides such fantastic creative common design with a Creative Common License from Behance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## ❓ FAQ <a name="faq"></a>
+
+- Is it difficult?
+
+  - It is commonly difficult for the setup, but do not give up. Once you get it, you would feel great!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+- Why Linter?
+
+  - It is pretty helpful for your project. For this one, stylelint helps me to style the style.css file better.</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
