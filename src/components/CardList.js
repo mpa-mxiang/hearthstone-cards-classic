@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'; // ES6
 import { fetchCards } from '../redux/cardSlice';
 import Data from '../pages/Data';
 
@@ -43,8 +44,8 @@ const CardList = () => {
       <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center sm:gap-3 px-3 pr-3 mb-8">
         {filteredCards.map((card) => (
-          <Link to={`/data/${card.cardId}`} key={card.cardId}>
-            <img src={card.img} onClick={Data} alt="cardImg" />
+          <Link src={Data} to={`/data/${card.cardId}`} key={card.cardId}>
+            <img src={card.img} alt="cardImg" />
           </Link>
         ))}
       </div>
@@ -58,17 +59,24 @@ const Filter = ({ searchTerm, setSearchTerm }) => {
   };
 
   return (
-    <div className="flex flex-col items-center sm:flex-row justify-center m-auto">
-      <label htmlFor="search" className="font-serif text-3xl font-bold">Search:</label>
-      <input
-        type="text"
-        id="search"
-        value={searchTerm}
-        onChange={handleSearchTermChange}
-        className="n-range:border-green-500 block p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      />
+    <div className="flex justify-center m-auto">
+      <label id="search-input" htmlFor="search" className="font-serif text-3xl font-bold">
+        Search:
+        <input
+          type="text"
+          id="search-input"
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+          className="n-range:border-green-500 block p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </label>
     </div>
   );
+};
+
+Filter.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.string.isRequired,
 };
 
 export default CardList;
