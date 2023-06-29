@@ -8,8 +8,8 @@ import Data from './pages/Data';
 const App = () => {
   return (
     <Router>
-    <div>
-      <h1 className="text-center text-6xl">Hearthstone</h1>
+    <div className="bg-amber-400">
+      <h1 className="text-center text-6xl font-sans">Hearthstone</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/data/:cardId" element={<Data />} />
