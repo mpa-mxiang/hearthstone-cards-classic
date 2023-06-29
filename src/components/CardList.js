@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchCards } from '../redux/cardSlice';
 import Data from '../pages/Data';
-import { Link } from 'react-router-dom';
 
 const CardList = () => {
   const cards = useSelector((state) => state.cards.cards);
@@ -23,14 +23,19 @@ const CardList = () => {
   }
 
   if (status === 'failed') {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
   }
 
   if (!cards) {
     return <div>No cards available.</div>;
   }
-  const filteredCards = cards.filter((card) =>
-    card.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredCards = cards.filter(
+    (card) => card.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -39,7 +44,7 @@ const CardList = () => {
       <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center sm:gap-3 px-3 pr-3 mb-8">
         {filteredCards.map((card) => (
           <Link to={`/data/${card.cardId}`} key={card.cardId}>
-            <img src={card.img} onClick={Data} alt="cardImg"/>
+            <img src={card.img} onClick={Data} alt="cardImg" />
           </Link>
         ))}
       </div>

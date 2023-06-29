@@ -40,7 +40,6 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
   }
 });
 
-
 const cardsSlice = createSlice({
   name: 'cards',
   initialState: {
