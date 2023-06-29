@@ -39,7 +39,7 @@ const CardList = () => {
       <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center sm:gap-3 px-3 pr-3 mb-8">
         {filteredCards.map((card) => (
           <Link to={`/data/${card.cardId}`} key={card.cardId}>
-            <img src={card.img} onClick={Data} alt="cardImg" />
+            <img src={card.img} onClick={Data} alt="cardImg"/>
           </Link>
         ))}
       </div>
