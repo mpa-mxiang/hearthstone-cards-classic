@@ -3,7 +3,7 @@ import CardList from '../components/CardList';
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-yellow-600">
       <CardList />
     </div>
   );
