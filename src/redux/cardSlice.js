@@ -9,7 +9,7 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
       },
     });
-    // Filter out items without the "image" key
+    // Filter out items without the "img" key
     const filteredCards = response.data.filter((card) => card.hasOwnProperty('img'));
 
     // Remove duplicates based on name and keep the one with the most keys

@@ -9,8 +9,7 @@ const App = () => {
   return (
     <Router>
     <div>
-
-      <h1>Hearthstone</h1>
+      <h1 className="text-center text-6xl">Hearthstone</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/data/:cardId" element={<Data />} />
