@@ -54,7 +54,7 @@ const Filter = ({ searchTerm, setSearchTerm }) => {
 
   return (
     <div className="flex flex-col items-center sm:flex-row justify-center m-auto">
-      <label htmlFor="search" className="font-serif text-xl">Search:</label>
+      <label htmlFor="search" className="font-serif text-3xl font-bold">Search:</label>
       <input
         type="text"
         id="search"
