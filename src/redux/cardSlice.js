@@ -1,16 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
   try {
-    const response = await axios.get('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Classic', {
+    const response = await fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Classic', {
       headers: {
         'x-rapidapi-key': 'a813b599aamsh4de48209de349c1p163491jsnfbdd9231636d',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
       },
     });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch cards');
+    }
+
+    const data = await response.json();
+
     // Filter out items without the "img" key
-    const filteredCards = response.data.filter((card) => card.hasOwnProperty('img'));
+    const filteredCards = data.filter((card) => card.hasOwnProperty('img'));
 
     // Remove duplicates based on name and keep the one with the most keys
     const uniqueCards = [];
@@ -28,12 +34,12 @@ export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
     }
 
     return uniqueCards;
-
   } catch (error) {
     console.error('Error fetching cards:', error);
     throw error;
   }
 });
+
 
 const cardsSlice = createSlice({
   name: 'cards',

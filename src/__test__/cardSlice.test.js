@@ -8,7 +8,7 @@ test('cards reducer test for pending', () => {
 
 test('cards reducer test for fullfilled', () => {
     let state = null;
-    state = cardsReducer(undefined, fetchCards.fullfilled());
+    state = cardsReducer(undefined, fetchCards.fulfilled());
     expect(state.status).toBe('succeeded');
   });
 
