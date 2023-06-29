@@ -35,7 +35,6 @@ const CardList = () => {
 
   return (
     <div>
-      <h1>Hearthstone Cards</h1>
       <Filter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div>
 
