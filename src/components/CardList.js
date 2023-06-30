@@ -76,7 +76,7 @@ const Filter = ({ searchTerm, setSearchTerm }) => {
 
 Filter.propTypes = {
   searchTerm: PropTypes.string.isRequired,
-  setSearchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.func.isRequired,
 };
 
 export default CardList;
