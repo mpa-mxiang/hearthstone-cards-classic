@@ -47,7 +47,7 @@ GitHub/Git, VS Code, Linters, React&Redux, Tailwind
 
 ### Future Features <a name="future-features"></a>
 
-- More detailed filters
+- More card details
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
