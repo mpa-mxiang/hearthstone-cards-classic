@@ -54,7 +54,7 @@ GitHub/Git, VS Code, Linters, React&Redux, Tailwind
 
 ### Live Demo <a name="live-demo"></a>
 
-- [https://mpa-mxiang.github.io/capstone1/](https://features--fantastic-marshmallow-978752.netlify.app/)
+- https://features--fantastic-marshmallow-978752.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
