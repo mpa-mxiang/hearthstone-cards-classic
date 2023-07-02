@@ -67,7 +67,7 @@ const Filter = ({ searchTerm, setSearchTerm }) => {
           id="search-input"
           value={searchTerm}
           onChange={handleSearchTermChange}
-          className="n-range:border-green-500 block p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="n-range:border-gray-500 block p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
         />
       </label>
     </div>
