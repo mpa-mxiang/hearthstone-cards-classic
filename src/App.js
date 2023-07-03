@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router, Route, Routes,
 } from 'react-router-dom';
 import Home from './pages/Home';
-import Data from './pages/Data';
 import Hearthstone from './img/pngegg.png';
 
 const App = () => (
@@ -15,7 +14,6 @@ const App = () => (
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/data/:cardId" element={<Data />} />
       </Routes>
     </div>
   </Router>
